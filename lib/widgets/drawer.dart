@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/utils/routes.dart';
 
 class MyDrawer extends StatelessWidget {
   final _userImage =
@@ -53,14 +54,19 @@ class MyDrawer extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ),
           ),
-          ListTile(
-            leading: Icon(
-              CupertinoIcons.mail,
-              color: Colors.white,
-            ),
-            title: Text(
-              "Email",
-              style: TextStyle(color: Colors.white),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, MyRoutes.loginRoute);
+            },
+            child: ListTile(
+              leading: Icon(
+                CupertinoIcons.mail,
+                color: Colors.white,
+              ),
+              title: Text(
+                "Email",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
         ],
